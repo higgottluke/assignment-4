@@ -68,6 +68,11 @@ function addKeyPressHandler() {
     if (event.keyCode === ESC_KEY) {
       hideDetails();
     }
+    if (48 < event.keyCode && event.keyCode < 54) {
+      var numberthumb = document.querySelector('.thumbnail-list > li:nth-child(' + (event.keyCode - 48) +') a')
+      setDetailsFromThumb(numberthumb);
+      showDetails();
+    }
   });
 }
 
